@@ -1,4 +1,4 @@
-package com.snapp.expensetracker.unittest;
+package com.snapp.expensetracker;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.snapp.expensetracker.entity.User;
