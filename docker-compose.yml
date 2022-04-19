@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  expense-tracker-service:
+    container_name: expense-tracker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: expense-tracker:latest
+    ports:
+      - 8080:8080
+
