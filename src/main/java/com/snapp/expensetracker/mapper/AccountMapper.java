@@ -9,7 +9,7 @@ import lombok.AllArgsConstructor;
 public class AccountMapper {
 
     public static AccountDto toDto(Account account) {
-       return AccountDto.builder().accountType(account.getAccountType())
+       return AccountDto.builder().accountType(account.getAccountType()).id(account.getId())
                .stateType(account.getStateType()).balance(account.getBalance())
                .creationDate(account.getCreationDate()).holder(account.getHolder()).build();
     }
