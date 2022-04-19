@@ -25,17 +25,6 @@ class AccountServiceTest {
     @Autowired
     private AccountService accountService;
 
-    @Test
-    void givenAccountDto_whenTryingToOPenAccount_whenSaveHit() {
-        AccountDto accountDto = AccountDto.builder().accountType(AccountType.CURRENT).holder("Tester").build();
-        accountService.open(accountDto);
-
-        Account account = Account.builder().balance(BigDecimal.ZERO)
-                .stateType(StateType.OPEN).accountType(AccountType.CURRENT).holder("Tester")
-                .build();
-
-        verify(accountRepository, times(1)).save(account);
-    }
 
     @Test
     void givenAccountId_whenTryingToCloseAccount_whenSaveHit() {
