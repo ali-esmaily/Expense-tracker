@@ -10,7 +10,7 @@ public interface AccountService {
     Page<AccountDto> findAll(Pageable pageable);
     AccountDto findById(Long aLong);
     Page<AccountDto> findAllByHolderLike(String holder, Pageable pageable);
-    void open(AccountDto accountDto);
+    Long open(AccountDto accountDto);
     void close(Long id);
 
 }

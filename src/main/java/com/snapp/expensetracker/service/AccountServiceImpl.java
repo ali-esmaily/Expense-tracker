@@ -37,11 +37,11 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
-    public void open(AccountDto accountDto) {
+    public Long open(AccountDto accountDto) {
         Account account = AccountMapper.toAccount(accountDto);
         account.setBalance(BigDecimal.ZERO);
         account.setStateType(StateType.OPEN);
-        accountRepository.save(account);
+        return accountRepository.save(account).getId();
     }
 
     public void close(@PathVariable Long id) {

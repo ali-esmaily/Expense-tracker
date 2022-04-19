@@ -29,6 +29,7 @@ public class Transaction {
 
     private BigDecimal amount;
     private Side side;
+
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
