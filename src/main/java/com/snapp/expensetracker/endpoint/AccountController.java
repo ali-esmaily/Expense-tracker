@@ -1,6 +1,7 @@
 package com.snapp.expensetracker.endpoint;
 
 import com.snapp.expensetracker.model.AccountDto;
+import com.snapp.expensetracker.model.CloseAccountDto;
 import com.snapp.expensetracker.service.AccountService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -35,8 +36,8 @@ public class AccountController {
         accountService.open(accountDto);
     }
 
-    @GetMapping("close/{id}")
-    public void close(@PathVariable Long id) {
-        accountService.close(id);
+    @PutMapping("close")
+    public void close(@RequestBody CloseAccountDto accountDto) {
+        accountService.close(accountDto.getAccountId());
     }
 }
